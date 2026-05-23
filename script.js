@@ -16,7 +16,11 @@ menuToggle.addEventListener("click", () => {
 
 function loadVotes() {
 
-  fetch("https://script.google.com/macros/s/AKfycbyLwoh6jQr9zVUBIcK7VG78IVMhIdGExVrpjrcwDRzzRKP__2yXiarzu341tXxLtWtc/exec")
+  fetch("https://script.google.com/macros/s/AKfycbz5H5Pl8stphwzZgDJy6Hd1UKtM0oGERG1GQ7zcrlhL3icnmHW4gpbXWJPKI4fcU0YL/exec", {
+     method: "GET",
+  mode: "cors",
+  cache: "no-cache"
+  })
 
     .then(response => response.json())
 
