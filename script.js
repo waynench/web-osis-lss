@@ -1,5 +1,19 @@
 console.log("JS CONNECTED");
 
+/* MOBILE NAVBAR */
+
+const menuToggle =
+  document.getElementById("menu-toggle");
+
+const navLinks =
+  document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+  navLinks.classList.toggle("active");
+
+});
+
 function loadVotes() {
 
   fetch("https://script.google.com/macros/s/AKfycbyLwoh6jQr9zVUBIcK7VG78IVMhIdGExVrpjrcwDRzzRKP__2yXiarzu341tXxLtWtc/exec")
@@ -18,6 +32,8 @@ const total =
   data.paslon1 +
   data.paslon2 +
   data.paslon3;
+
+document.getElementById("totalVotes").innerText = total;
 
 const percent1 =
   total > 0
