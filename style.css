@@ -20,197 +20,306 @@ body {
 }
 
 /* =========================
-   NAVBAR
+   NAVBAR PREMIUM
 ========================= */
 
 .navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 18px;
+  left: 50%;
 
-  padding: 18px 24px;
+  transform: translateX(-50%);
+
+  width: calc(100% - 48px);
+  max-width: 1400px;
+
+  padding: 18px 34px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  border-radius: 28px;
+
   background:
     linear-gradient(
-      rgba(11, 31, 58, 0.82),
-      rgba(11, 31, 58, 0.82)
+      135deg,
+      rgba(8, 20, 38, 0.92),
+      rgba(15, 37, 68, 0.88)
     ),
     url("batik.png");
 
-background-size: 300px;
-background-repeat: repeat;
+  background-size: 320px;
 
-  background-position: center;
+  backdrop-filter: blur(22px);
 
-  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
 
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.28),
+    0 0 40px rgba(255,213,79,0.08);
 
   z-index: 1000;
+
   transition: 0.4s ease;
+
+  overflow: hidden;
 }
 
-.navbar.scrolled {
-  background: rgba(11, 31, 58, 0.85);
-  backdrop-filter: blur(25px);
+/* GOLD GLOW */
+
+.navbar::before {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,213,79,0.22),
+    transparent 70%
+  );
+
+  top: -120px;
+  left: -80px;
+
+  pointer-events: none;
 }
+
+/* BOTTOM LINE */
 
 .navbar::after {
   content: "";
+
   position: absolute;
+
   bottom: 0;
-  left: 5%;
-  width: 90%;
-  height: 2px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 88%;
+  height: 1.5px;
+
   background: linear-gradient(
     90deg,
     transparent,
-    #ffd54f,
+    rgba(255,213,79,0.95),
     transparent
   );
-  opacity: 0.7;
+
+  box-shadow:
+    0 0 12px rgba(255,213,79,0.7);
 }
 
-.nav-links a {
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
-  font-size: 15px;
+/* SCROLL EFFECT */
 
-  padding: 10px 16px;
-  border-radius: 999px;
+.navbar.scrolled {
+  top: 10px;
 
-  transition: 0.3s ease;
-  position: relative;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8,20,38,0.96),
+      rgba(12,30,55,0.94)
+    );
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.34),
+    0 0 50px rgba(255,213,79,0.12);
 }
 
-.nav-links a.active {
-  background: rgba(255, 213, 79, 0.18);
-  color: #ffd54f;
-  box-shadow: 0 0 20px rgba(255,213,79,0.15);
-}
-
-.nav-links a:hover {
-  background: rgba(255, 213, 79, 0.12);
-  color: #ffd54f;
-}
-
-.nav-links a::after {
-  display: none;
-}
-
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo {
   display: flex;
   align-items: center;
   gap: 16px;
+
+  position: relative;
+  z-index: 2;
 }
 
 .logo img {
-  width: 70px;
-  height: 70px;
+  width: 74px;
+  height: 74px;
 
   object-fit: contain;
 
-  filter: drop-shadow(0 0 4px rgba(255,255,255,0.7));
+  filter:
+    drop-shadow(0 0 12px rgba(255,213,79,0.45))
+    drop-shadow(0 0 25px rgba(255,255,255,0.15));
+
+  transition: 0.35s ease;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
+.logo:hover img {
+  transform: scale(1.06) rotate(-2deg);
 }
 
 .logo-text h1 {
-  font-size: 28px;
-  letter-spacing: 1px;
-  text-shadow: 0 0 12px rgba(255,213,79,0.25);
-  color: #ffd54f;
-
-  font-size: 32px;
+  font-size: 34px;
 
   line-height: 1;
 
   font-family: "Cormorant Garamond", serif;
+
+  color: #ffd54f;
+
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 12px rgba(255,213,79,0.45),
+    0 0 25px rgba(255,213,79,0.18);
 }
 
 .logo-text h2 {
-  color: white;
+  color: rgba(255,255,255,0.78);
 
   font-size: 11px;
 
-  margin-top: 5px;
+  letter-spacing: 5px;
 
-  letter-spacing: 4px;
+  margin-top: 6px;
 }
 
-/* NAV LINKS */
+/* =========================
+   NAV LINKS
+========================= */
 
 .nav-links {
   display: flex;
+  align-items: center;
 
-  gap: 32px;
+  gap: 12px;
 
   list-style: none;
+
+  background: rgba(255,255,255,0.04);
+
+  padding: 10px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(10px);
 }
 
 .nav-links a {
-  color: white;
+  position: relative;
+
+  color: rgba(255,255,255,0.84);
 
   text-decoration: none;
 
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 500;
 
-  position: relative;
+  padding: 12px 20px;
 
-  transition: 0.3s ease;
+  border-radius: 999px;
 
-  padding: 8px 0;
+  transition: 0.35s ease;
 
-  cursor: pointer;
+  overflow: hidden;
+
+  z-index: 1;
 }
 
-.nav-links a::after {
+/* HOVER BG */
+
+.nav-links a::before {
   content: "";
 
   position: absolute;
 
-  left: 0;
-  bottom: -3px;
+  inset: 0;
 
-  width: 0%;
-  height: 2px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,213,79,0.22),
+      rgba(255,255,255,0.08)
+    );
 
-  background: #ffd54f;
+  opacity: 0;
 
-  transition: 0.3s ease;
+  transition: 0.35s ease;
+
+  border-radius: 999px;
+
+  z-index: -1;
+}
+
+.nav-links a:hover::before {
+  opacity: 1;
 }
 
 .nav-links a:hover {
   color: #ffd54f;
+
+  transform: translateY(-2px);
+
+  text-shadow:
+    0 0 10px rgba(255,213,79,0.5);
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+/* ACTIVE */
+
+.nav-links a.active {
+  color: #0b1f3a;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd54f,
+      #ffe082
+    );
+
+  box-shadow:
+    0 0 18px rgba(255,213,79,0.45),
+    0 8px 22px rgba(255,213,79,0.25);
+
+  font-weight: 700;
 }
 
-/* MENU TOGGLE */
+/* =========================
+   MENU TOGGLE
+========================= */
 
 .menu-toggle {
   display: none;
 
-  background: none;
+  background: rgba(255,255,255,0.08);
 
-  border: none;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 16px;
 
   color: white;
 
-  font-size: 28px;
+  font-size: 24px;
 
-  cursor: pointer;
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(255,213,79,0.16);
+
+  color: #ffd54f;
+
+  box-shadow:
+    0 0 20px rgba(255,213,79,0.2);
 }
 
 /* =========================
