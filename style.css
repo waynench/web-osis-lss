@@ -1482,9 +1482,10 @@ footer {
   .navbar {
     position: fixed;
     z-index: 9999;
+    overflow: visible;
   }
 
-  .nav-links {
+    .nav-links {
     position: absolute;
 
     top: 90px;
@@ -1505,6 +1506,8 @@ footer {
     gap: 18px;
 
     z-index: 9999;
+
+    overflow: visible;
   }
 
   .nav-links.active {
