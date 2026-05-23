@@ -1078,12 +1078,164 @@ footer {
 }
 
 /* =========================
+   MEMBERS
+========================= */
+
+.members {
+  padding: 120px 0;
+}
+
+.members-header {
+  text-align: center;
+
+  max-width: 760px;
+
+  margin: auto;
+
+  margin-bottom: 70px;
+}
+
+.members-header h2 {
+  font-size: 52px;
+
+  color: #0b1f3a;
+
+  margin-bottom: 20px;
+}
+
+.members-header p {
+  color: #64748b;
+
+  line-height: 1.9;
+}
+
+.members-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 28px;
+}
+
+.member-card {
+  background: rgba(255,255,255,0.75);
+
+  border-radius: 28px;
+
+  padding: 35px 24px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  transition: 0.35s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+}
+
+.member-placeholder {
+  width: 110px;
+  height: 110px;
+
+  margin: auto;
+
+  margin-bottom: 22px;
+
+  border-radius: 50%;
+
+  border: 2px dashed #cbd5e1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+
+  color: #94a3b8;
+}
+
+.member-card h3 {
+  color: #0b1f3a;
+
+  margin-bottom: 10px;
+
+  font-size: 20px;
+}
+
+.member-card span {
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   TOP MEMBERS
+========================= */
+
+.member-card.top-member {
+
+  border: 2px solid #ffd54f;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff8dc,
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 20px rgba(255,213,79,0.35),
+    0 10px 30px rgba(0,0,0,0.08);
+
+  animation: memberGlow 2.5s infinite;
+
+}
+
+.member-card.top-member h3 {
+  color: #b8860b;
+}
+
+.member-card.top-member .member-placeholder {
+
+  border: 2px solid #ffd54f;
+
+  background: rgba(255,213,79,0.08);
+
+}
+
+@keyframes memberGlow {
+
+  0% {
+    box-shadow:
+      0 0 12px rgba(255,213,79,0.2),
+      0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 0 28px rgba(255,213,79,0.55),
+      0 14px 34px rgba(0,0,0,0.1);
+  }
+
+  100% {
+    box-shadow:
+      0 0 12px rgba(255,213,79,0.2),
+      0 10px 30px rgba(0,0,0,0.08);
+  }
+
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
-
-  @media (max-width: 768px) {
 
   .navbar {
     position: fixed;
@@ -1122,8 +1274,6 @@ footer {
 
     z-index: 10000;
   }
-
-}
 
   .navbar {
     position: fixed;
