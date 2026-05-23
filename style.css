@@ -1085,34 +1085,58 @@ footer {
 
   .menu-toggle {
     display: block;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 10001;
   }
 
-.navbar {
-  z-index: 9999;
-}
+  .navbar {
+    position: fixed;
+
+    z-index: 9999;
+  }
 
   .nav-links {
-    position: absolute;
 
-    top: 85px;
-    right: 0;
+    position: fixed;
 
-    width: 220px;
+    top: 90px;
+    right: -100%;
+
+    width: 240px;
+    height: calc(100vh - 90px);
 
     background: #0b1f3a;
 
     flex-direction: column;
 
-    text-align: center;
+    align-items: center;
 
-    padding: 24px 0;
+    justify-content: flex-start;
 
-    display: none;
+    gap: 30px;
+
+    padding-top: 40px;
+
+    transition: 0.35s ease;
+
+    display: flex;
+
+    z-index: 9998;
   }
 
   .nav-links.active {
-    display: flex;
+    right: 0;
   }
+
 
   .hero-content h1 {
     font-size: 54px;
