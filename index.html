@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OSIS SMP/A LSS</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <header>
+
+    <nav class="navbar">
+
+      <div class="logo">
+
+        <img src="logo-osis.png" alt="Logo OSIS">
+
+        <div class="logo-text">
+
+          <h1>OSIS SMP/A SANTA LAURENSIA</h1>
+
+          <h2>SUVARNA SUTERA • OFFICIAL WEBSITE</h2>
+
+        </div>
+
+      </div>
+
+      <ul class="nav-links">
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="organization.html">Organization</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+      </ul>
+
+      <button class="menu-toggle" id="menu-toggle">
+        ☰
+      </button>
+
+    </nav>
+
+  </header>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>
+        Welcome, Laurensians!
+      </h1>
+
+      <p>
+        LAURENSIA: HOME OF TIGERS
+      </p>
+
+      <a href="about.html" class="btn">
+  See More!
+      </a>
+
+    </div>
+
+  </section>
+
+    <!-- =========================
+         GREETING
+    ========================== -->
+
+    <section class="greeting">
+
+      <div class="container greeting-wrapper">
+
+        <div class="greeting-image">
+
+          <img src="ketua-osis.png" alt="Ketua OSIS">
+
+        </div>
+
+        <div class="greeting-content">
+
+          <p class="greeting-label">
+            KATA SAMBUTAN
+          </p>
+
+          <h2>
+            Ketua OSIS GEN VII
+          </h2>
+
+          <p class="greeting-text">
+            Ikan hiu makan tomat, gua cakep bodoamattt.
+            Sir nuel guru tergacorrr seLaurensia!!!
+            KALCERRR!!!!!!
+          </p>
+
+          <div class="greeting-profile">
+
+            <h3>
+              WAYNE NICHOLAS
+            </h3>
+
+            <span>
+              Ketua OSIS GEN VII
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  <!-- =========================
+       RECRUITMENT
+  ========================== -->
+
+  <section class="recruitment">
+
+    <div class="container">
+
+      <div class="recruitment-header">
+
+        <p class="recruitment-label">
+          OSIS ELECTION 2026
+        </p>
+
+        <h2>
+          Awaiting Future Leaders
+        </h2>
+
+        <p>
+          Jadilah bagian dari generasi berikutnya yang akan membawa perubahan
+          bagi SMP/A Santa Laurensia Suvarna Sutera.
+        </p>
+
+      </div>
+
+      <div class="candidate-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="candidate-card">
+
+          <div class="candidate-placeholder">
+            ?
+          </div>
+
+          <h3>
+            PASLON #1
+          </h3>
+
+          <span>
+            WAYNE & NICHOLAS
+          </span>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="candidate-card">
+
+          <div class="candidate-placeholder">
+            ?
+          </div>
+
+          <h3>
+            PASLON #2
+          </h3>
+
+          <span>
+            WAYNE & NICHOLAS
+          </span>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="candidate-card">
+
+          <div class="candidate-placeholder">
+            ?
+          </div>
+
+          <h3>
+            PASLON #3
+          </h3>
+
+          <span>
+            WAYNE & NICHOLAS
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <div class="recruitment-button">
+
+        <a href="https://forms.gle/AQo3nPhLQSg7jJCg6"
+           class="btn"
+           target="_blank">
+
+          Register for OSIS
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="live-vote">
+
+  <h2>Live Vote Count</h2>
+
+  <div class="vote-grid">
+
+    <div class="vote-card" id="card1">
+      <h3>PASLON #1</h3>
+      <p id="vote1">...</p>
+
+<div class="progress-bar">
+  <div class="progress-fill" id="progress1"></div>
+</div>
+
+<span id="percent1">0%</span>
+    </div>
+
+    <div class="vote-card" id="card2">
+      <h3>PASLON #2</h3>
+      <p id="vote2">...</p>
+
+<div class="progress-bar">
+  <div class="progress-fill" id="progress2"></div>
+</div>
+
+<span id="percent2">0%</span>
+    </div>
+
+    <div class="vote-card" id="card3">
+      <h3>PASLON #3</h3>
+      <p id="vote3">...</p>
+
+<div class="progress-bar">
+  <div class="progress-fill" id="progress3"></div>
+</div>
+
+<span id="percent3">0%</span>
+    </div>
+
+  </div>
+
+  <!-- BUTTON -->
+
+      <div class="recruitment-button">
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_Ch1lZkJB1zdsfWhiek91MG5xdMBhP8NeqCwgaK0pTLKHHg/viewform?usp=dialog"
+           class="btn"
+           target="_blank">
+
+          Vote Now!
+
+        </a>
+
+      </div>
+
+    </div>
+
+</div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 OSIS SMP/A LSS. All Rights Reserved.
+    </p>
+
+  </footer>
+
+<!-- JS -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
