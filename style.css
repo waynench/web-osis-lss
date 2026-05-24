@@ -8,6 +8,13 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   cursor: default;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 html {
@@ -15,8 +22,23 @@ html {
 }
 
 body {
+  position: relative;
+  overflow-x: hidden;
   background-color: #f5f7fb;
   color: #1e293b;
+  animation: fadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================
@@ -24,6 +46,7 @@ body {
 ========================= */
 
 .navbar {
+  flex-wrap: nowrap;
   position: fixed;
   top: 18px;
   left: 50%;
@@ -33,7 +56,7 @@ body {
   width: calc(100% - 48px);
   max-width: 1400px;
 
-  padding: 18px 34px;
+  padding: 16px 24px;
 
   display: flex;
   justify-content: space-between;
@@ -124,7 +147,10 @@ body {
       135deg,
       rgba(8,20,38,0.96),
       rgba(12,30,55,0.94)
-    );
+    ),
+    url("batik.png");
+
+  background-size: 320px;
 
   box-shadow:
     0 12px 40px rgba(0,0,0,0.34),
@@ -139,7 +165,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-
+  flex-shrink: 0;
   position: relative;
   z-index: 2;
 }
@@ -162,7 +188,7 @@ body {
 }
 
 .logo-text h1 {
-  font-size: 34px;
+  font-size: 26px;
 
   line-height: 1;
 
@@ -180,9 +206,9 @@ body {
 .logo-text h2 {
   color: rgba(255,255,255,0.78);
 
-  font-size: 11px;
+  font-size: 10px;
 
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 
   margin-top: 6px;
 }
@@ -194,14 +220,17 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  gap: 12px;
+  flex-wrap: nowrap;
+
+  gap: 8px;
 
   list-style: none;
 
   background: rgba(255,255,255,0.04);
 
-  padding: 10px;
+  padding: 10px 16px;
 
   border-radius: 999px;
 
@@ -210,18 +239,21 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.nav-links li {
+  flex: none;
+}
+
 .nav-links a {
   position: relative;
-
+  min-width: 120px;
+  text-align: center;
   color: rgba(255,255,255,0.84);
-
   text-decoration: none;
-
   font-size: 15px;
   font-weight: 500;
 
   padding: 12px 20px;
-
+  white-space: nowrap;
   border-radius: 999px;
 
   transition: 0.35s ease;
@@ -274,18 +306,17 @@ body {
 .nav-links a.active {
   color: #0b1f3a;
 
-  background:
-    linear-gradient(
-      135deg,
-      #ffd54f,
-      #ffe082
-    );
+  background: linear-gradient(
+    135deg,
+    #ffd54f,
+    #ffe082
+  );
 
   box-shadow:
-    0 0 18px rgba(255,213,79,0.45),
-    0 8px 22px rgba(255,213,79,0.25);
+    0 0 12px rgba(255,213,79,0.25),
+    0 4px 12px rgba(255,213,79,0.15);
 
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* =========================
@@ -1585,69 +1616,19 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE NAVBAR
 ========================= */
 
 @media (max-width: 768px) {
 
   .navbar {
-    position: fixed;
-    z-index: 9999;
-    overflow: visible;
-  }
+    width: calc(100% - 24px);
 
-    .nav-links {
-    position: absolute;
-
-    top: 90px;
-    right: 20px;
-
-    width: 220px;
-
-    background: #0b1f3a;
-
-    border-radius: 18px;
-
-    padding: 20px;
-
-    display: none;
-
-    flex-direction: column;
-
-    gap: 18px;
-
-    z-index: 9999;
-
-    overflow: visible;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-
-    z-index: 10000;
-  }
-
-  .navbar {
-    position: fixed;
-
-    z-index: 9999;
-  }
-
-
-  .hero-content h1 {
-    font-size: 54px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
+    padding: 14px 18px;
   }
 
   .logo-text h1 {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .logo-text h2 {
@@ -1656,32 +1637,341 @@ footer {
     letter-spacing: 2px;
   }
 
-  .about-wrapper,
-  .greeting-wrapper {
-    flex-direction: column;
+  .logo img {
+    width: 56px;
+    height: 56px;
   }
 
-  .about-text,
-  .greeting-content {
+  .menu-toggle {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10001;
+  }
+
+  .nav-links {
+
+    position: absolute;
+
+    top: 90px;
+    right: 20px;
+
+    width: 230px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+
+    padding: 20px;
+
+    border-radius: 24px;
+
+    background: rgba(11,31,58,0.96);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+      0 20px 40px rgba(0,0,0,0.28);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition: 0.3s ease;
+
+    z-index: 9999;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+
+    width: 100%;
+
     text-align: center;
   }
 
-  .about-text h2,
-  .greeting-content h2,
-  .recruitment-header h2,
-  .organization-header h2 {
-    font-size: 38px;
+  .nav-links.active {
+
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
   }
 
-  .greeting-image img {
-    width: 240px;
+}
+
+/* =========================
+   EVENTS PAGE
+========================= */
+
+.events-hero {
+
+  height: 60vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 120px 20px 60px;
+
+  background:
+    linear-gradient(rgba(11,31,58,0.82), rgba(11,31,58,0.82)),
+    url("sekolah-2.png");
+
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+}
+
+.events-label {
+
+  font-size: 13px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #ffd54f;
+
+  margin-bottom: 20px;
+
+  font-weight: 600;
+}
+
+.events-hero-content h1 {
+
+  font-size: 68px;
+
+  margin-bottom: 24px;
+}
+
+.events-hero-content p {
+
+  max-width: 700px;
+
+  margin: auto;
+
+  line-height: 1.9;
+
+  color: #e2e8f0;
+}
+
+/* EVENTS */
+
+.events-section {
+
+  padding: 100px 0;
+
+  background: #f5f7fb;
+}
+
+.events-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+}
+
+.event-card {
+
+  background: rgba(255,255,255,0.8);
+
+  padding: 40px 30px;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  transition: 0.35s ease;
+}
+
+.event-card:hover {
+
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.12);
+}
+
+.event-date {
+
+  width: fit-content;
+
+  padding: 10px 18px;
+
+  border-radius: 14px;
+
+  background: #ffd54f;
+
+  color: #0b1f3a;
+
+  font-weight: 700;
+
+  margin-bottom: 24px;
+}
+
+.event-card h3 {
+
+  color: #0b1f3a;
+
+  margin-bottom: 16px;
+
+  font-size: 26px;
+}
+
+.event-card p {
+
+  color: #64748b;
+
+  line-height: 1.8;
+
+  margin-bottom: 20px;
+}
+
+.event-card span {
+
+  color: #b8860b;
+
+  font-weight: 600;
+}
+
+/* GOOGLE DRIVE */
+
+.drive-section {
+
+  padding-bottom: 120px;
+}
+
+.drive-box {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b1f3a,
+      #16345d
+    );
+
+  padding: 40px;
+
+  border-radius: 30px;
+
+  color: white;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.15);
+}
+
+.drive-icon img {
+
+  width: 90px;
+  height: 90px;
+}
+
+.drive-info h3 {
+
+  font-size: 32px;
+
+  margin-bottom: 12px;
+}
+
+.drive-info p {
+
+  color: #e2e8f0;
+
+  margin-bottom: 20px;
+
+  line-height: 1.8;
+}
+
+.drive-info a {
+
+  display: inline-block;
+
+  padding: 14px 28px;
+
+  border-radius: 14px;
+
+  background: #ffd54f;
+
+  color: #0b1f3a;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.drive-info a:hover {
+
+  transform: translateY(-4px);
+
+  background: #ffe082;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .events-hero-content h1 {
+    font-size: 44px;
   }
 
-  .about-image img {
-    width: 90px;
+  .drive-box {
+
+    flex-direction: column;
+
+    text-align: center;
   }
 
-  .contact h2 {
-    font-size: 34px;
-  }
+}
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.bg-circle {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: #facc15;
+  border-radius: 50%;
+  filter: blur(120px);
+
+  top: -100px;
+  right: -100px;
+
+  z-index: -1;
+  opacity: 0.5;
+
+  pointer-events: none;
+}
+
+.nav-links li {
+  list-style: none;
 }

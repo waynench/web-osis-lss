@@ -214,3 +214,4 @@ if (document.getElementById("vote1")) {
   setInterval(loadVotes, 5000);
 
 }
+
