@@ -10,15 +10,92 @@ const menuToggle =
 const navLinks =
   document.querySelector(".nav-links");
 
+/* TOGGLE MENU */
+
 if (menuToggle && navLinks) {
 
-  menuToggle.addEventListener("click", () => {
+  menuToggle.addEventListener("click", function (e) {
+
+    e.stopPropagation();
 
     navLinks.classList.toggle("active");
 
   });
 
 }
+
+/* CLOSE MENU WHEN CLICK LINK */
+
+const navItems =
+  document.querySelectorAll(".nav-links a");
+
+navItems.forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("active");
+
+  });
+
+});
+
+/* CLOSE MENU WHEN CLICK OUTSIDE */
+
+document.addEventListener("click", function (e) {
+
+  if (
+    navLinks &&
+    navLinks.classList.contains("active") &&
+    !navLinks.contains(e.target) &&
+    !menuToggle.contains(e.target)
+  ) {
+
+    navLinks.classList.remove("active");
+
+  }
+
+});
+
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+
+const navbar =
+  document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 30) {
+
+    navbar.classList.add("scrolled");
+
+  } else {
+
+    navbar.classList.remove("scrolled");
+
+  }
+
+});
+
+/* =========================
+   ACTIVE NAV LINK
+========================= */
+
+const currentPage =
+  window.location.pathname.split("/").pop();
+
+navItems.forEach(link => {
+
+  const linkPage =
+    link.getAttribute("href");
+
+  if (linkPage === currentPage) {
+
+    link.classList.add("active");
+
+  }
+
+});
 
 /* =========================
    LIVE VOTE COUNT
@@ -39,9 +116,7 @@ function loadVotes() {
 
   .then(data => {
 
-    /* =========================
-       ELEMENTS
-    ========================== */
+    /* ELEMENTS */
 
     const vote1 =
       document.getElementById("vote1");
@@ -55,14 +130,13 @@ function loadVotes() {
     const totalVotes =
       document.getElementById("totalVotes");
 
-    /* kalau bukan halaman voting */
+    /* STOP IF NOT VOTE PAGE */
+
     if (!vote1 || !vote2 || !vote3) {
       return;
     }
 
-    /* =========================
-       UPDATE VOTES
-    ========================== */
+    /* UPDATE VOTES */
 
     vote1.innerText = data.paslon1;
     vote2.innerText = data.paslon2;
@@ -77,9 +151,7 @@ function loadVotes() {
       totalVotes.innerText = total;
     }
 
-    /* =========================
-       PERCENTAGE
-    ========================== */
+    /* PERCENTAGE */
 
     const percent1 =
       total > 0
@@ -96,9 +168,7 @@ function loadVotes() {
         ? ((data.paslon3 / total) * 100).toFixed(1)
         : 0;
 
-    /* =========================
-       PROGRESS BAR
-    ========================== */
+    /* PROGRESS BAR */
 
     const progress1 =
       document.getElementById("progress1");
@@ -118,9 +188,7 @@ function loadVotes() {
     if (progress3)
       progress3.style.width = percent3 + "%";
 
-    /* =========================
-       PERCENT TEXT
-    ========================== */
+    /* PERCENT TEXT */
 
     const percentText1 =
       document.getElementById("percent1");
@@ -140,9 +208,7 @@ function loadVotes() {
     if (percentText3)
       percentText3.innerText = percent3 + "%";
 
-    /* =========================
-       LEADING CARD
-    ========================== */
+    /* LEADING CARD */
 
     const card1 =
       document.getElementById("card1");
@@ -214,4 +280,3 @@ if (document.getElementById("vote1")) {
   setInterval(loadVotes, 5000);
 
 }
-

@@ -7,7 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  cursor: default;
+  cursor: auto;
 
   transition:
     background-color 0.3s ease,
@@ -15,6 +15,11 @@
     border-color 0.3s ease,
     transform 0.3s ease,
     opacity 0.3s ease;
+}
+
+button,
+a {
+  cursor: pointer;
 }
 
 html {
@@ -325,7 +330,8 @@ body {
 
 .menu-toggle {
   display: none;
-
+  position: relative;
+  z-index: 10002;
   background: rgba(255,255,255,0.08);
 
   border: 1px solid rgba(255,255,255,0.1);
