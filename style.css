@@ -91,7 +91,7 @@ body {
 
   transition: 0.4s ease;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* GOLD GLOW */
@@ -1697,7 +1697,7 @@ footer {
   .nav-links {
 
     position: absolute;
-
+display: none;
     top: 80px;
     right: 0;
 
@@ -1733,7 +1733,7 @@ footer {
   .nav-links.active {
 
     opacity: 1;
-
+display: flex;
     visibility: visible;
 
     transform: translateY(0);
