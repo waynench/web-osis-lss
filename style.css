@@ -1621,99 +1621,300 @@ footer {
 
 }
 
-/* =========================
-   RESPONSIVE NAVBAR
-========================= */
-
 @media (max-width: 768px) {
 
+  /* =========================
+     NAVBAR
+  ========================= */
+
   .navbar {
-    width: calc(100% - 24px);
 
-    padding: 14px 18px;
+    width: calc(100% - 20px);
+
+    padding: 12px 16px;
+
+    top: 10px;
+
+    border-radius: 22px;
+
+    z-index: 99999;
   }
 
-  .logo-text h1 {
-    font-size: 18px;
-  }
+  .logo {
 
-  .logo-text h2 {
-    font-size: 8px;
-
-    letter-spacing: 2px;
+    gap: 10px;
   }
 
   .logo img {
-    width: 56px;
-    height: 56px;
+
+    width: 46px;
+    height: 46px;
   }
 
+  .logo-text h1 {
+
+    font-size: 14px;
+
+    line-height: 1.2;
+  }
+
+  .logo-text h2 {
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+  }
+
+  /* =========================
+     HAMBURGER
+  ========================= */
+
   .menu-toggle {
+
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    z-index: 10001;
+    width: 46px;
+    height: 46px;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 100000;
+
+    pointer-events: auto;
   }
+
+  /* =========================
+     MOBILE MENU
+  ========================= */
 
   .nav-links {
 
     position: absolute;
 
-    top: 90px;
-    right: 20px;
+    top: 80px;
+    right: 0;
 
-    width: 230px;
+    width: 220px;
 
-    display: flex;
     flex-direction: column;
 
     align-items: stretch;
 
-    gap: 12px;
+    gap: 10px;
 
-    padding: 20px;
+    padding: 18px;
 
-    border-radius: 24px;
+    border-radius: 22px;
 
-    background: rgba(11,31,58,0.96);
+    background: rgba(11,31,58,0.98);
 
-    backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255,255,255,0.08);
-
-    box-shadow:
-      0 20px 40px rgba(0,0,0,0.28);
+    backdrop-filter: blur(20px);
 
     opacity: 0;
+
     visibility: hidden;
 
     transform: translateY(-10px);
 
+    pointer-events: none;
+
+    z-index: 99998;
+
     transition: 0.3s ease;
-
-    z-index: 9999;
-  }
-
-  .nav-links li {
-    list-style: none;
-  }
-
-  .nav-links a {
-    display: block;
-
-    width: 100%;
-
-    text-align: center;
   }
 
   .nav-links.active {
 
     opacity: 1;
+
     visibility: visible;
 
     transform: translateY(0);
+
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+
+    width: 100%;
+
+    min-width: unset;
+
+    padding: 14px;
+
+    font-size: 14px;
+
+    text-align: center;
+
+    cursor: pointer;
+  }
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+
+    height: auto;
+
+    min-height: 100vh;
+
+    padding-top: 180px;
+
+    padding-bottom: 80px;
+  }
+
+  .hero-content h1 {
+
+    font-size: 44px;
+
+    letter-spacing: -1px;
+
+    line-height: 1.1;
+  }
+
+  .hero-content p {
+
+    font-size: 16px;
+
+    line-height: 1.8;
+  }
+
+  .btn {
+
+    padding: 14px 24px;
+
+    font-size: 14px;
+  }
+
+  /* =========================
+     GREETING
+  ========================= */
+
+  .greeting {
+
+    padding: 80px 0;
+  }
+
+  .greeting-wrapper {
+
+    flex-direction: column;
+
+    gap: 40px;
+
+    text-align: center;
+  }
+
+  .greeting-image img {
+
+    width: 220px;
+  }
+
+  .greeting-content h2 {
+
+    font-size: 36px;
+  }
+
+  .greeting-text {
+
+    font-size: 16px;
+
+    line-height: 1.9;
+  }
+
+  /* =========================
+     ABOUT
+  ========================= */
+
+  .about-wrapper {
+
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .about-text h2 {
+
+    font-size: 38px;
+  }
+
+  .about-text p {
+
+    font-size: 16px;
+  }
+
+  /* =========================
+     SECTION TITLES
+  ========================= */
+
+  .recruitment-header h2,
+  .organization-header h2,
+  .contact h2,
+  .members-header h2,
+  .live-vote h2 {
+
+    font-size: 36px;
+  }
+
+  /* =========================
+     CARDS
+  ========================= */
+
+  .candidate-grid,
+  .vote-grid,
+  .members-grid,
+  .cards {
+
+    grid-template-columns: 1fr;
+  }
+
+  .candidate-card,
+  .vote-card,
+  .member-card,
+  .card {
+
+    padding: 30px 20px;
+  }
+
+  /* =========================
+     CONTACT
+  ========================= */
+
+  .contact-box {
+
+    flex-direction: column;
+
+    text-align: center;
+
+    width: 100%;
+  }
+
+  .contact-info {
+
+    text-align: center;
+  }
+
+  /* =========================
+     EVENTS
+  ========================= */
+
+  .events-hero-content h1 {
+
+    font-size: 42px;
+  }
+
+  .drive-box {
+
+    flex-direction: column;
+
+    text-align: center;
   }
 
 }
