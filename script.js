@@ -14,37 +14,37 @@ const navLinks =
 
 if (menuToggle && navLinks) {
 
-  menuToggle.addEventListener("click", function (e) {
+  menuToggle.onclick = function (e) {
+
+    e.preventDefault();
 
     e.stopPropagation();
 
     navLinks.classList.toggle("active");
 
-  });
+  };
 
 }
 
-/* CLOSE MENU WHEN CLICK LINK */
+/* CLOSE WHEN CLICK LINK */
 
-const navItems =
-  document.querySelectorAll(".nav-links a");
+document
+  .querySelectorAll(".nav-links a")
+  .forEach(link => {
 
-navItems.forEach(link => {
+    link.onclick = () => {
 
-  link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
 
-    navLinks.classList.remove("active");
+    };
 
   });
 
-});
-
-/* CLOSE MENU WHEN CLICK OUTSIDE */
+/* CLOSE WHEN CLICK OUTSIDE */
 
 document.addEventListener("click", function (e) {
 
   if (
-    navLinks &&
     navLinks.classList.contains("active") &&
     !navLinks.contains(e.target) &&
     !menuToggle.contains(e.target)
@@ -55,7 +55,6 @@ document.addEventListener("click", function (e) {
   }
 
 });
-
 /* =========================
    NAVBAR SCROLL EFFECT
 ========================= */

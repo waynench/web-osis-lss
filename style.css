@@ -2182,3 +2182,34 @@ footer {
 .nav-links li {
   list-style: none;
 }
+
+/* FIX MOBILE MENU */
+
+.menu-toggle,
+.menu-toggle * {
+
+  pointer-events: auto !important;
+
+}
+
+.menu-toggle {
+
+  position: relative;
+
+  z-index: 999999 !important;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+.nav-links {
+
+  z-index: 999998 !important;
+}
+
+.navbar {
+
+  z-index: 999997 !important;
+}
