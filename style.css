@@ -1433,20 +1433,98 @@ footer {
    COORDINATOR BADGE
 ========================= */
 
+/* =========================
+   DEFAULT COORDINATOR BADGE
+========================= */
+
 .coordinator-card .member-role {
+
+  color: inherit;
+
+}
+
+.kerohanian-theme .member-role {
 
   background: linear-gradient(
     135deg,
-    rgba(96,165,250,0.18),
-    rgba(255,255,255,0.7)
+    rgba(168,85,247,0.18),
+    rgba(255,255,255,0.75)
   );
 
-  border: 1px solid rgba(96,165,250,0.45);
+  border: 1px solid rgba(168,85,247,0.4);
+
+  color: #9333ea;
+
+  box-shadow:
+    0 4px 14px rgba(168,85,247,0.25);
+
+}
+
+.wirausaha-theme .member-role {
+
+  background: linear-gradient(
+    135deg,
+    rgba(34,197,94,0.18),
+    rgba(255,255,255,0.75)
+  );
+
+  border: 1px solid rgba(34,197,94,0.4);
+
+  color: #16a34a;
+
+  box-shadow:
+    0 4px 14px rgba(34,197,94,0.25);
+
+}
+
+.visual-theme .member-role {
+
+  background: linear-gradient(
+    135deg,
+    rgba(168,85,247,0.18),
+    rgba(255,255,255,0.75)
+  );
+
+  border: 1px solid rgba(168,85,247,0.4);
+
+  color: #9333ea;
+
+  box-shadow:
+    0 4px 14px rgba(168,85,247,0.25);
+
+}
+
+.bina-theme .member-role {
+
+  background: linear-gradient(
+    135deg,
+    rgba(239,68,68,0.18),
+    rgba(255,255,255,0.75)
+  );
+
+  border: 1px solid rgba(239,68,68,0.4);
+
+  color: #dc2626;
+
+  box-shadow:
+    0 4px 14px rgba(239,68,68,0.25);
+
+}
+
+.humas-theme .member-role {
+
+  background: linear-gradient(
+    135deg,
+    rgba(59,130,246,0.18),
+    rgba(255,255,255,0.75)
+  );
+
+  border: 1px solid rgba(59,130,246,0.4);
 
   color: #2563eb;
 
   box-shadow:
-    0 4px 14px rgba(96,165,250,0.35);
+    0 4px 14px rgba(59,130,246,0.25);
 
 }
 
@@ -2330,4 +2408,703 @@ body {
 
 .hero {
   position: relative;
+}
+
+/* =========================
+   DIVISION THEMES
+========================= */
+
+/* =========================
+   BINA BANGSA
+========================= */
+
+.bina-bangsa {
+
+  padding: 60px;
+
+  border-radius: 40px;
+
+  margin-top: 80px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(220,38,38,0.08),
+      rgba(255,255,255,0.95)
+    );
+
+  border: 2px solid rgba(220,38,38,0.12);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.bina-bangsa::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0),
+      rgba(220,38,38,0.05)
+    );
+
+  pointer-events: none;
+}
+
+.bina-bangsa .division-title {
+
+  color: #dc2626;
+
+  text-shadow:
+    0 0 18px rgba(220,38,38,0.18);
+}
+
+.bina-bangsa .coordinator-card {
+
+  border-color: #dc2626;
+
+  box-shadow:
+    0 0 30px rgba(220,38,38,0.18);
+}
+
+/* =========================
+   KEROHANIAN
+========================= */
+
+.kerohanian {
+
+  padding: 60px;
+
+  border-radius: 40px;
+
+  margin-top: 80px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(251,191,36,0.08),
+      rgba(255,255,255,0.96)
+    );
+
+  border: 2px solid rgba(251,191,36,0.12);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.kerohanian .division-title {
+
+  color: #d97706;
+
+  text-shadow:
+    0 0 18px rgba(251,191,36,0.2);
+}
+
+.kerohanian .coordinator-card {
+
+  border-color: #fbbf24;
+
+  box-shadow:
+    0 0 30px rgba(251,191,36,0.2);
+}
+
+/* =========================
+   HUMAS
+========================= */
+
+.humas {
+
+  padding: 60px;
+
+  border-radius: 40px;
+
+  margin-top: 80px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59,130,246,0.08),
+      rgba(255,255,255,0.96)
+    );
+
+  border: 2px solid rgba(59,130,246,0.12);
+
+  overflow: hidden;
+}
+
+.humas .division-title {
+
+  color: #2563eb;
+
+  text-shadow:
+    0 0 18px rgba(59,130,246,0.2);
+}
+
+.humas .coordinator-card {
+
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 30px rgba(59,130,246,0.2);
+}
+
+/* =========================
+   VISUAL & KREATIF
+========================= */
+
+.visual {
+
+  padding: 60px;
+
+  border-radius: 40px;
+
+  margin-top: 80px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(168,85,247,0.08),
+      rgba(236,72,153,0.08)
+    );
+
+  border: 2px solid rgba(168,85,247,0.15);
+
+  overflow: hidden;
+}
+
+.visual .division-title {
+
+  background:
+    linear-gradient(
+      90deg,
+      #a855f7,
+      #ec4899
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.visual .coordinator-card {
+
+  border-color: #a855f7;
+
+  box-shadow:
+    0 0 35px rgba(168,85,247,0.22);
+}
+
+/* =========================
+   WIRAUSAHA
+========================= */
+
+.wirausaha {
+
+  padding: 60px;
+
+  border-radius: 40px;
+
+  margin-top: 80px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16,185,129,0.08),
+      rgba(255,255,255,0.96)
+    );
+
+  border: 2px solid rgba(16,185,129,0.12);
+
+  overflow: hidden;
+}
+
+.wirausaha .division-title {
+
+  color: #059669;
+
+  text-shadow:
+    0 0 18px rgba(16,185,129,0.2);
+}
+
+.wirausaha .coordinator-card {
+
+  border-color: #10b981;
+
+  box-shadow:
+    0 0 30px rgba(16,185,129,0.2);
+}
+
+/* =========================
+   DIVISION COORDINATOR COLORS
+========================= */
+
+/* BINA BANGSA */
+
+.bina-bangsa .coordinator-card {
+
+  border: 2px solid #dc2626;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff1f2,
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 24px rgba(220,38,38,0.35),
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+.bina-bangsa .coordinator-card .member-photo {
+
+  border: 3px solid #dc2626;
+
+  box-shadow:
+    0 0 22px rgba(220,38,38,0.4);
+}
+
+.bina-bangsa .coordinator-card .member-role {
+
+  color: #dc2626;
+
+  border-color: rgba(220,38,38,0.35);
+}
+
+/* KEROHANIAN */
+
+.kerohanian .coordinator-card {
+
+  border: 2px solid #fbbf24;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffbeb,
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 24px rgba(251,191,36,0.35),
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+.kerohanian .coordinator-card .member-photo {
+
+  border: 3px solid #fbbf24;
+
+  box-shadow:
+    0 0 22px rgba(251,191,36,0.4);
+}
+
+/* HUMAS */
+
+.humas .coordinator-card {
+
+  border: 2px solid #3b82f6;
+
+  background:
+    linear-gradient(
+      180deg,
+      #eff6ff,
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 24px rgba(59,130,246,0.35),
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* VISUAL */
+
+.visual .coordinator-card {
+
+  border: 2px solid #a855f7;
+
+  background:
+    linear-gradient(
+      180deg,
+      #faf5ff,
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 26px rgba(168,85,247,0.45),
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+.visual .coordinator-card .member-photo {
+
+  border: 3px solid #a855f7;
+
+  box-shadow:
+    0 0 24px rgba(168,85,247,0.45);
+}
+
+.visual .coordinator-card .member-role {
+
+  color: #a855f7;
+
+  border-color: rgba(168,85,247,0.4);
+}
+
+/* WIRAUSAHA */
+
+.wirausaha .coordinator-card {
+
+  border: 2px solid #10b981;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ecfdf5,
+      #ffffff
+    );
+
+  box-shadow:
+    0 0 24px rgba(16,185,129,0.35),
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+.wirausaha .coordinator-card .member-photo {
+
+  border: 3px solid #10b981;
+
+  box-shadow:
+    0 0 22px rgba(16,185,129,0.4);
+}
+
+/* =========================
+   COORDINATOR NAME COLORS
+========================= */
+
+/* BINA BANGSA */
+
+.bina-bangsa .coordinator-card h3 {
+  color: #dc2626;
+}
+
+/* KEROHANIAN */
+
+.kerohanian .coordinator-card h3 {
+  color: #d97706;
+}
+
+/* HUMAS */
+
+.humas .coordinator-card h3 {
+  color: #2563eb;
+}
+
+/* VISUAL */
+
+.visual .coordinator-card h3 {
+
+  background:
+    linear-gradient(
+      90deg,
+      #a855f7,
+      #ec4899
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* WIRAUSAHA */
+
+.wirausaha .coordinator-card h3 {
+  color: #059669;
+}
+
+/* =========================
+   PREMIUM DIVISION SECTION
+========================= */
+
+.division-section {
+
+  position: relative;
+
+  padding: 70px 50px;
+
+  border-radius: 40px;
+
+  margin-top: 90px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+.division-title {
+
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 44px;
+
+  font-weight: 700;
+
+  margin-bottom: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+/* =========================
+   CARD UPGRADE
+========================= */
+
+.division-section .member-card {
+
+  background: rgba(255,255,255,0.82);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.7);
+
+  transition: 0.35s ease;
+}
+
+.division-section .member-card:hover {
+
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* =========================
+   BINA BANGSA
+========================= */
+
+.bina-bangsa {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,240,240,0.95),
+      rgba(255,255,255,0.96)
+    );
+
+  border: 2px solid rgba(220,38,38,0.12);
+}
+
+.division-bina .division-title::before {
+  content: "✦";
+
+  position: absolute;
+
+  right: 40px;
+  top: 20px;
+
+  font-size: 220px;
+
+  opacity: 0.08;
+
+  z-index: 0;
+}
+
+.bina-bangsa .division-title {
+
+  color: #dc2626;
+}
+
+/* =========================
+   KEROHANIAN
+========================= */
+
+.kerohanian {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,251,235,0.95),
+      rgba(255,255,255,0.96)
+    );
+
+  border: 2px solid rgba(251,191,36,0.12);
+}
+
+.kerohanian::before {
+
+  content: "✝";
+
+  position: absolute;
+
+  right: 60px;
+  top: 10px;
+
+  font-size: 240px;
+
+  opacity: 0.07;
+
+  color: #fbbf24;
+}
+
+.kerohanian .division-title {
+
+  color: #d97706;
+}
+
+/* =========================
+   HUMAS
+========================= */
+
+.humas {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239,246,255,0.95),
+      rgba(255,255,255,0.96)
+    );
+
+  border: 2px solid rgba(59,130,246,0.12);
+}
+
+.humas::before {
+
+  content: "💬";
+
+  position: absolute;
+
+  right: 40px;
+  top: 20px;
+
+  font-size: 220px;
+
+  opacity: 0.08;
+}
+
+.humas .division-title {
+
+  color: #2563eb;
+}
+
+/* =========================
+   VISUAL
+========================= */
+
+.visual {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(250,245,255,0.96),
+      rgba(255,255,255,0.96)
+    );
+
+  border: 2px solid rgba(168,85,247,0.14);
+}
+
+.visual::before {
+
+  content: "🎨";
+
+  position: absolute;
+
+  right: 40px;
+  top: 20px;
+
+  font-size: 220px;
+
+  opacity: 0.08;
+}
+
+.visual .division-title {
+
+  background:
+    linear-gradient(
+      90deg,
+      #a855f7,
+      #ec4899
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   WIRAUSAHA
+========================= */
+
+.wirausaha {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(236,253,245,0.96),
+      rgba(255,255,255,0.96)
+    );
+
+  border: 2px solid rgba(16,185,129,0.14);
+}
+
+.wirausaha::before {
+
+  content: "💸";
+
+  position: absolute;
+
+  right: 40px;
+  top: 20px;
+
+  font-size: 220px;
+
+  opacity: 0.08;
+}
+
+.wirausaha .division-title {
+
+  color: #059669;
+}
+
+/* FORCE KEROHANIAN BADGE */
+
+.kerohanian .coordinator-card .member-role {
+
+  background: linear-gradient(
+    135deg,
+    rgba(251,191,36,0.18),
+    rgba(255,255,255,0.75)
+  );
+
+  border: 1px solid rgba(251,191,36,0.4);
+
+  color: #d97706;
+
+  box-shadow:
+    0 4px 14px rgba(251,191,36,0.25);
+
+}
+
+/* FORCE WIRAUSAHA BADGE */
+
+.wirausaha .coordinator-card .member-role {
+
+  background: linear-gradient(
+    135deg,
+    rgba(16,185,129,0.18),
+    rgba(255,255,255,0.75)
+  );
+
+  border: 1px solid rgba(16,185,129,0.4);
+
+  color: #059669;
+
+  box-shadow:
+    0 4px 14px rgba(16,185,129,0.25);
+
 }
