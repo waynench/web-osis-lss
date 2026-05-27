@@ -27,6 +27,10 @@ html {
 }
 
 body {
+  scroll-behavior: smooth;
+}
+
+body {
   position: relative;
   overflow-x: hidden;
   background-color: #f5f7fb;
@@ -388,13 +392,15 @@ body {
 
   inset: 0;
 
+  background-image: url("sekolah-1.png");
+
   background-size: cover;
 
   background-position: center;
 
   background-repeat: no-repeat;
 
-  animation: heroSlider 10s infinite ease-in-out;
+  transition: background-image 0.5s ease;
 
   z-index: -2;
 }
@@ -411,21 +417,7 @@ body {
   z-index: -1;
 }
 
-@keyframes heroSlider {
 
-  0% {
-    background-image: url("sekolah-1.png");
-  }
-
-  50% {
-    background-image: url("sekolah-2.png");
-  }
-
-  100% {
-    background-image: url("sekolah-1.png");
-  }
-
-}
 
 .hero-content {
   max-width: 850px;
@@ -2212,4 +2204,145 @@ display: flex;
 .navbar {
 
   z-index: 999997 !important;
+}
+
+/* =========================
+   SMOOTH PAGE TRANSITION
+========================= */
+
+body {
+  opacity: 0;
+  animation: pageFade 0.8s ease forwards;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   DOUBLE LOGO
+========================= */
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.school-logo {
+  width: 62px !important;
+  height: 62px !important;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+
+  .school-logo {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+}
+
+/* =========================
+   HERO SWIPE BUTTON
+========================= */
+
+.hero-slider-controls {
+  position: absolute;
+
+  bottom: 40px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 14px;
+
+  z-index: 5;
+}
+
+.hero-btn {
+  width: 52px;
+  height: 52px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.18);
+
+  color: white;
+
+  font-size: 28px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #ffd54f;
+
+  color: #0b1f3a;
+
+  transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+
+  .hero-btn {
+    width: 44px;
+    height: 44px;
+
+    font-size: 22px;
+  }
+
+}
+
+/* =========================
+   MOBILE PERFORMANCE
+========================= */
+
+@media (max-width: 768px) {
+
+  * {
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .navbar {
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero::before {
+    background-position: center center;
+  }
+
+  .candidate-card:hover,
+  .member-card:hover,
+  .card:hover,
+  .vote-card:hover {
+    transform: none;
+  }
+
 }

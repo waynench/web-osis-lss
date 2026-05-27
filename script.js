@@ -279,3 +279,105 @@ if (document.getElementById("vote1")) {
   setInterval(loadVotes, 5000);
 
 }
+
+/* =========================
+   SMOOTH PAGE CHANGE
+========================= */
+
+document.querySelectorAll("a").forEach(link => {
+
+  const href = link.getAttribute("href");
+
+  if (
+    href &&
+    !href.startsWith("#") &&
+    !href.startsWith("http")
+  ) {
+
+    link.addEventListener("click", function (e) {
+
+      e.preventDefault();
+
+      document.body.style.opacity = "0";
+
+      setTimeout(() => {
+
+        window.location.href = href;
+
+      }, 250);
+
+    });
+
+  }
+
+});
+
+/* =========================
+   HERO SWIPE SLIDER
+========================= */
+
+const hero =
+  document.querySelector(".hero");
+
+const heroImages = [
+  "sekolah-1.png",
+  "sekolah-2.png",
+  "sekolah-3.png"
+];
+
+let currentHero = 0;
+
+function updateHero() {
+
+  hero.style.setProperty(
+    "--hero-bg",
+    `url(${heroImages[currentHero]})`
+  );
+
+  hero.querySelector("::before");
+
+  hero.style.backgroundImage =
+    `linear-gradient(rgba(11,31,58,0.72), rgba(11,31,58,0.72)),
+    url(${heroImages[currentHero]})`;
+
+}
+
+const nextHero =
+  document.getElementById("nextHero");
+
+const prevHero =
+  document.getElementById("prevHero");
+
+if (nextHero && prevHero) {
+
+  nextHero.onclick = () => {
+
+    currentHero++;
+
+    if (currentHero >= heroImages.length) {
+      currentHero = 0;
+    }
+
+    document.querySelector(".hero::before");
+
+    document.querySelector(".hero").style.background =
+      `linear-gradient(rgba(11,31,58,0.72), rgba(11,31,58,0.72)),
+      url(${heroImages[currentHero]}) center/cover`;
+
+  };
+
+  prevHero.onclick = () => {
+
+    currentHero--;
+
+    if (currentHero < 0) {
+      currentHero = heroImages.length - 1;
+    }
+
+    document.querySelector(".hero").style.background =
+      `linear-gradient(rgba(11,31,58,0.72), rgba(11,31,58,0.72)),
+      url(${heroImages[currentHero]}) center/cover`;
+
+  };
+
+}
