@@ -383,40 +383,18 @@ body {
   padding: 20px;
 
   padding-top: 140px;
-}
 
-.hero::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background-image: url("sekolah-1.png");
+  background-image:
+    linear-gradient(rgba(11,31,58,0.65), rgba(11,31,58,0.65)),
+    url("sekolah-1.png");
 
   background-size: cover;
 
   background-position: center;
 
-  background-repeat: no-repeat;
-
-  transition: background-image 0.5s ease;
-
-  z-index: -2;
+  transition:
+    background-image 0.8s ease-in-out,
 }
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(11,31,58,0.72);
-
-  z-index: -1;
-}
-
 
 
 .hero-content {
@@ -2238,16 +2216,19 @@ body {
 }
 
 .school-logo {
-  width: 62px !important;
-  height: 62px !important;
+  width: 78px !important;
+  height: 78px !important;
+
   object-fit: contain;
+
+  transform: scale(1.08);
 }
 
 @media (max-width: 768px) {
 
   .school-logo {
-    width: 38px !important;
-    height: 38px !important;
+    width: 48px !important;
+    height: 48px !important;
   }
 
 }
@@ -2345,4 +2326,8 @@ body {
     transform: none;
   }
 
+}
+
+.hero {
+  position: relative;
 }

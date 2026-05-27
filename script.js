@@ -83,6 +83,9 @@ window.addEventListener("scroll", () => {
 const currentPage =
   window.location.pathname.split("/").pop();
 
+const navItems =
+  document.querySelectorAll(".nav-links a");
+
 navItems.forEach(link => {
 
   const linkPage =
@@ -321,26 +324,19 @@ const hero =
 
 const heroImages = [
   "sekolah-1.png",
-  "sekolah-2.png",
-  "sekolah-3.png"
+  "sekolah-2.png"
 ];
 
 let currentHero = 0;
 
-function updateHero() {
+/* SET FIRST IMAGE */
 
-  hero.style.setProperty(
-    "--hero-bg",
-    `url(${heroImages[currentHero]})`
-  );
+hero.style.background =
+  `linear-gradient(rgba(11,31,58,0.72),
+  rgba(11,31,58,0.72)),
+  url(${heroImages[currentHero]}) center/cover no-repeat`;
 
-  hero.querySelector("::before");
-
-  hero.style.backgroundImage =
-    `linear-gradient(rgba(11,31,58,0.72), rgba(11,31,58,0.72)),
-    url(${heroImages[currentHero]})`;
-
-}
+/* BUTTON */
 
 const nextHero =
   document.getElementById("nextHero");
@@ -348,7 +344,20 @@ const nextHero =
 const prevHero =
   document.getElementById("prevHero");
 
-if (nextHero && prevHero) {
+/* CHANGE SLIDE */
+
+function changeHero(index) {
+
+  hero.style.backgroundImage =
+    `linear-gradient(rgba(11,31,58,0.72),
+    rgba(11,31,58,0.72)),
+    url(${heroImages[index]})`;
+
+}
+
+/* NEXT */
+
+if (nextHero) {
 
   nextHero.onclick = () => {
 
@@ -358,13 +367,15 @@ if (nextHero && prevHero) {
       currentHero = 0;
     }
 
-    document.querySelector(".hero::before");
-
-    document.querySelector(".hero").style.background =
-      `linear-gradient(rgba(11,31,58,0.72), rgba(11,31,58,0.72)),
-      url(${heroImages[currentHero]}) center/cover`;
+    changeHero(currentHero);
 
   };
+
+}
+
+/* PREVIOUS */
+
+if (prevHero) {
 
   prevHero.onclick = () => {
 
@@ -374,10 +385,49 @@ if (nextHero && prevHero) {
       currentHero = heroImages.length - 1;
     }
 
-    document.querySelector(".hero").style.background =
-      `linear-gradient(rgba(11,31,58,0.72), rgba(11,31,58,0.72)),
-      url(${heroImages[currentHero]}) center/cover`;
+    changeHero(currentHero);
 
   };
 
 }
+
+/* MOBILE SWIPE */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+hero.addEventListener("touchstart", e => {
+
+  touchStartX = e.changedTouches[0].screenX;
+
+});
+
+hero.addEventListener("touchend", e => {
+
+  touchEndX = e.changedTouches[0].screenX;
+
+  if (touchEndX < touchStartX - 50) {
+
+    currentHero++;
+
+    if (currentHero >= heroImages.length) {
+      currentHero = 0;
+    }
+
+    changeHero(currentHero);
+
+  }
+
+  if (touchEndX > touchStartX + 50) {
+
+    currentHero--;
+
+    if (currentHero < 0) {
+      currentHero = heroImages.length - 1;
+    }
+
+    changeHero(currentHero);
+
+  }
+
+});
